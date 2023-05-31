@@ -27,9 +27,11 @@ router.post("/", async (req, res) => {
     start: req.body.start,
     end: req.body.end,
     title: req.body.title,
+    phone:req.body.phone,
     adressDepart:req.body.adressDepart,
     adressArrive:req.body.adressArrive,
-    remarque : req.body.remarque
+    remarque : req.body.remarque,
+    bonDeCommande:req.body.bonDeCommande,
   };
   let collection = await db.collection("event");
   let result = await collection.insertOne(newDocument);
@@ -44,9 +46,11 @@ router.patch("/:id", async (req, res) => {
       name: req.body.name,
       end: req.body.end,
       title: req.body.title,
+      phone:req.body.phone,
     adressDepart:req.body.adressDepart,
     adressArrive:req.body.adressArrive,
-    remarque : req.body.remarque
+    remarque : req.body.remarque,
+    bonDeCommande: req.body.bonDeCommande
       
     }
   };
